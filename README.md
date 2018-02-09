@@ -27,6 +27,7 @@
       - [cloudfront/main.tf](#cloudfrontmaintf)
     - [Create the Custom Domain and CloudFront Distribution](#create-the-custom-domain-and-cloudfront-distribution)
 - [Taking it down](#taking-it-down)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -137,7 +138,7 @@ module "vpc" {
 ```
 
 The `name` variable is used to name the vpc and the resources in it. The
-`aws_key` variables are required to for ssh access to the bastion and NAT
+`aws_key_*` variables are required to for ssh access to the bastion and NAT
 instances.
 
 #### Create the keypair
@@ -287,10 +288,10 @@ To destroy the resources created run the following:
 cd cloudfront
 terraform destroy
 
-cd ..
+cd ../..
 zappa undeploy prod
 
-cd vpc
+cd terraform/vpc
 terraform destroy
 ```
 
