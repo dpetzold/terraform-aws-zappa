@@ -117,9 +117,9 @@ mkdir <yourproject>/terraform
 cp -R example/* <yourproject>/terraform
 ```
 
-This module assumes you are using a Route53 hosted zone for DNS. If you are not
-using Route53 you must create a zone and copy the resulting records to your
-authoritative source.
+> This module assumes you are using a Route53 hosted zone for DNS. If you are not
+> using Route53 you must create a zone and copy the resulting records to your
+> authoritative source.
 
 ### Phase 1 - Create the VPC
 
