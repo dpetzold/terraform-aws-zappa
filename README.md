@@ -147,7 +147,7 @@ $ terraform plan
 $ terraform apply
 ```
 
-#### Setup ssh
+#### Setup SSH
 
 Edit your ssh configuration file to provide access to the EC2 instances:
 
@@ -178,7 +178,7 @@ $ pg_restore -h postgres.internal -U postgres -W -C -d postgres <sqlfile>
 #### Update Django settings
 
 CloudFront is configured to pass the Host field via the X-Forwarded-Host
-header. It is required by Django for host header validation and sites
+header. It is required by Django for host header validation and the sites
 framework. Update the settings file so the forwarded field is used.
 
 ```
@@ -277,5 +277,4 @@ After it completes create the CNAME to the distribution.
 
 This code is released under the Apache 2.0 License. Please see
 [LICENSE](https://github.com/dpetzold/terraform-aws-zappa/tree/master/LICENSE)
-and [NOTICE](https://github.com/dpetzold/terraform-aws-zappa/tree/master/NOTICE) for more 
-details.
+and for more details.
