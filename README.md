@@ -52,6 +52,8 @@ It is based on following guides:
 
 Please see them for the motivations behind this module.
 
+![Architecture](https://github.com/dpetzold/terraform-aws-zappa/blob/master/_docs/architecture.svg?raw=true)
+
 ### Sample output
 
 After the vpc module is run the output similar to the one below will be generated:
