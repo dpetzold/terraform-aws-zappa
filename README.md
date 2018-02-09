@@ -107,7 +107,6 @@ To verify:
 
 ```
 $ aws ec2 describe-vpcs
-$ terraform plan
 ```
 
 Copy the files in the example to a location for editing:
@@ -116,6 +115,10 @@ Copy the files in the example to a location for editing:
 mkdir <yourproject>/terraform
 cp -R example/* <yourproject>/terraform
 ```
+
+This module assumes you are using a Route53 hosted zone for DNS. If you are not
+using Route53 you must create a zone and copy the resulting records to your
+authoritative source.
 
 ### Phase 1 - Create the VPC
 
@@ -274,7 +277,22 @@ $ terraform apply
 ```
 
 It can take up to 15 minutes for the CloudFront distribution to provision.
-After it completes create the CNAME to the distribution.
+
+
+## Taking it down
+
+To destroy the resources created run the following:
+
+```
+cd cloudfront
+terraform destroy
+
+cd ..
+zappa undeploy prod
+
+cd vpc
+terraform destroy
+``
 
 ## License
 
