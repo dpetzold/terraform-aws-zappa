@@ -285,14 +285,14 @@ It can take up to 15 minutes for the CloudFront distribution to provision.
 To destroy the resources created run the following:
 
 ```
-cd cloudfront
-terraform destroy
+$ cd cloudfront
+$ terraform destroy
 
-cd ../..
-zappa undeploy prod
+$ cd ../..
+$ zappa undeploy prod
 
-cd terraform/vpc
-terraform destroy
+$ cd terraform/vpc
+$ terraform destroy
 ```
 
 ## License
