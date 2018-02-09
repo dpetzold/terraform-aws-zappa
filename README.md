@@ -26,7 +26,7 @@
     - [Create the terraform configuration](#create-the-terraform-configuration-1)
       - [cloudfront/main.tf](#cloudfrontmaintf)
     - [Create the Custom Domain and CloudFront Distribution](#create-the-custom-domain-and-cloudfront-distribution)
-- [License](#license)
+- [Taking it down](#taking-it-down)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
