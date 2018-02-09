@@ -110,13 +110,18 @@ $ aws ec2 describe-vpcs
 $ terraform plan
 ```
 
+Copy the files in the example to a location for editing:
+
+```
+mkdir <yourproject>/terraform
+cp -R example/* <yourproject>/terraform
+```
+
 ### Phase 1 - Create the VPC
 
 #### Create the terraform configuration
 
-```
-$ mkdir vpc
-```
+Edit:
 
 ##### vpc/main.tf
 ```hcl
@@ -239,9 +244,7 @@ $ aws apigateway get-rest-apis --query 'items[0].id'
 
 #### Create the terraform configuration
 
-```
-$ mkdir cloudfront
-```
+Edit:
 
 ##### cloudfront/main.tf
 ```hcl
