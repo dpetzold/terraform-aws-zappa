@@ -110,11 +110,12 @@ To verify:
 $ aws ec2 describe-vpcs
 ```
 
-Copy the files in the example to a location for editing:
+Copy the files in the examples to a location for editing:
 
 ```
-mkdir <yourproject>/terraform
-cp -R example/* <yourproject>/terraform
+mkdir -p <yourproject>/terraform/vpc
+cp -R examples/vpc/simple/* <yourproject>/terraform/vpc
+cp -R examples/cloudfront <yourproject>/terraform
 ```
 
 > This module assumes you are using a Route53 hosted zone for DNS. If you are not

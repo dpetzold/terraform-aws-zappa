@@ -6,16 +6,20 @@ output "default_security_group_id" {
   value = "${module.vpc.default_security_group_id}"
 }
 
-output "postgres_cname" {
-  value = "${module.vpc.postgres_cname}"
+output "postgres_endpoint" {
+  value = "${module.vpc.postgres_endpoint}"
+}
+
+output "postgres_username" {
+  value = "${module.vpc.postgres_username}"
 }
 
 output "postgres_password" {
   value = "${module.vpc.postgres_password}"
 }
 
-output "redis_cname" {
-  value = "${module.vpc.redis_cname}"
+output "redis_endpoint" {
+  value = "${module.vpc.redis_endpoint}"
 }
 
 output "bastion_public_ip" {

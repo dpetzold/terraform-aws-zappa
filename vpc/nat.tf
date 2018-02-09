@@ -118,7 +118,7 @@ resource "aws_security_group" "nat" {
 }
 
 module "nat" {
-  source             = "github.com/dpetzold/tf_aws_nat?ref=route-table-identifier"
+  source             = "github.com/terraform-community-modules/tf_aws_nat"
   name               = "${var.name}"
   instance_type      = "${var.nat_instance_type}"
   instance_count     = "${var.nat_instance_count}"
