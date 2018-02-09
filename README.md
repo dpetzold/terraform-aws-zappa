@@ -52,7 +52,7 @@ It is based on following guides:
 
 Please see them for the motivations behind this module.
 
-![Architecture](https://github.com/dpetzold/terraform-aws-zappa/blob/master/_docs/architecture.svg?raw=true)
+![Architecture](https://github.com/dpetzold/terraform-aws-zappa/blob/master/_docs/architecture.png?raw=true)
 
 ### Sample output
 
