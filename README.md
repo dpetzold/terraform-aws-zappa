@@ -213,7 +213,7 @@ from the terraform output.
             "CELERY_RESULT_URL": "redis://redis.internal:6379/5",
             "DATABASE_URL": "postgres://postgres:<dbpassword>@postgres.internal/postgres",
             "DJANGO_AWS_REGION": "us-east-1",
-            "DJANGO_SETTINGS_MODULE": "config.settings.production",
+            "DJANGO_SETTINGS_MODULE": "config.settings.production"
         },
         "vpc_config": {
             "SubnetIds": [
