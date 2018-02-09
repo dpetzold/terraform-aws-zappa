@@ -78,7 +78,7 @@ redis_cname = redis.internal
 
 This module is split into two parts as Zappa needs to be deployed after the VPC
 is created but before the custom domain and CloudFront distribution are
-created. Giving this guide three phases:
+created. Which gives us three phases:
 
 1. Create the VPC and internal resources
 2. Deploy the Zappa application

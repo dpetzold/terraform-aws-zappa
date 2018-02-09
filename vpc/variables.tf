@@ -20,10 +20,6 @@ variable "aws_key_location" {
   description = "AWS key location"
 }
 
-variable "repository_name" {
-  description = "Name of the ECR repository"
-}
-
 // Bastion
 
 variable "bastion_instance_type" {

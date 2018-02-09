@@ -25,11 +25,3 @@ output "bastion_public_ip" {
 output "nat_private_ips" {
   value = ["${module.nat.private_ips}"]
 }
-
-output "repository_arn" {
-  value = "${aws_ecr_repository.repository.arn}"
-}
-
-output "repository_url" {
-  value = "${aws_ecr_repository.repository.repository_url}"
-}
