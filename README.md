@@ -13,7 +13,7 @@
       - [vpc/main.tf](#vpcmaintf)
     - [Create the keypair](#create-the-keypair)
     - [Run terrafrom](#run-terrafrom)
-    - [Setup ssh](#setup-ssh)
+    - [Setup SSH](#setup-ssh)
       - [.ssh/config](#sshconfig)
     - [Initialize the database](#initialize-the-database)
   - [Phase 2 - Deploy with Zappa](#phase-2---deploy-with-zappa)
