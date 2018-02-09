@@ -44,6 +44,8 @@ and running with [Zappa](https://github.com/Miserlou/Zappa):
 * Internal DNS records
 * Associated security groups
 
+![Architecture](https://github.com/dpetzold/terraform-aws-zappa/blob/master/_docs/architecture.png?raw=true)
+
 It is based on following guides:
 
 * https://github.com/Miserlou/Zappa/blob/master/README.md
@@ -51,8 +53,6 @@ It is based on following guides:
 * https://edgarroman.github.io/zappa-django-guide/walk_domain/
 
 Please see them for the motivations behind this module.
-
-![Architecture](https://github.com/dpetzold/terraform-aws-zappa/blob/master/_docs/architecture.png?raw=true)
 
 ### Sample output
 
