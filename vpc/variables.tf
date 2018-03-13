@@ -18,9 +18,15 @@ variable "aws_key_name" {
 
 variable "aws_key_location" {
   description = "AWS key location"
+  default     = ""
 }
 
 // Bastion
+
+variable "enable_bastion" {
+  description = "Enable bastion instance"
+  default     = true
+}
 
 variable "bastion_instance_type" {
   description = "Bastion instance type"
