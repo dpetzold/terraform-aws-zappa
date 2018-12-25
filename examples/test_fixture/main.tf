@@ -1,5 +1,8 @@
 provider "aws" {
   region = "${var.region}"
+
+  // random: version = "~> 1.1"
+  // template: version = "~> 1.0"
 }
 
 data "aws_availability_zones" "available" {}

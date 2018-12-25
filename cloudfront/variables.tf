@@ -2,8 +2,8 @@ variable "stage_name" {
   description = "The name of the deployment stage"
 }
 
-variable "api_id" {
-  description = "The id of the api gateway"
+variable "rest_api_name" {
+  description = "The name of the api gateway"
 }
 
 variable "domain_names" {

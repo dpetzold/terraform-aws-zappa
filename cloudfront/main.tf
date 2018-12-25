@@ -1,7 +1,23 @@
 data "aws_acm_certificate" "cert" {
-  count    = "${length(var.domain_names)}"
-  domain   = "${element(var.domain_names, count.index)}"
-  statuses = ["ISSUED"]
+  count       = "${length(var.domain_names)}"
+  domain      = "${element(var.domain_names, count.index)}"
+  statuses    = ["ISSUED"]
+  most_recent = true
+}
+
+data "aws_api_gateway_rest_api" "rest_api" {
+  name = "${var.rest_api_name}"
+}
+
+resource "aws_api_gateway_base_path_mapping" "api_mapping" {
+  api_id      = "${data.aws_api_gateway_rest_api.rest_api.id}"
+  stage_name  = "${var.stage_name}"
+  domain_name = "${aws_api_gateway_domain_name.api.domain_name}"
+}
+
+resource "aws_api_gateway_domain_name" "api" {
+  domain_name     = "api.${element(var.domain_names, 0)}"
+  certificate_arn = "${element(data.aws_acm_certificate.cert.*.arn, 0)}"
 }
 
 resource "aws_cloudfront_distribution" "cf_distribution" {
@@ -102,15 +118,4 @@ resource "aws_cloudfront_distribution" "cf_distribution" {
     acm_certificate_arn = "${element(data.aws_acm_certificate.cert.*.arn, count.index)}"
     ssl_support_method  = "sni-only"
   }
-}
-
-resource "aws_api_gateway_domain_name" "api" {
-  domain_name     = "api.${element(var.domain_names, 0)}"
-  certificate_arn = "${element(data.aws_acm_certificate.cert.*.arn, 0)}"
-}
-
-resource "aws_api_gateway_base_path_mapping" "api_mapping" {
-  api_id      = "${var.api_id}"
-  stage_name  = "${var.stage_name}"
-  domain_name = "${aws_api_gateway_domain_name.api.domain_name}"
 }

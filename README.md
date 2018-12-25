@@ -96,18 +96,16 @@ working. See:
 * https://www.terraform.io/intro/getting-started/install.html
 * https://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
-You will at least need to set the following:
 
 ```
-$ export AWS_ACCESS_KEY_ID="anaccesskey"
-$ export AWS_SECRET_ACCESS_KEY="asecretkey"
-$ export AWS_DEFAULT_REGION="us-east-1"
+aws configure
+export PROJECT_NAME="<project_name>"
 ```
 
 To verify:
 
 ```
-$ aws ec2 describe-vpcs
+$ aws sts get-caller-identity
 ```
 
 Copy the files in the examples to a location for editing:
@@ -126,15 +124,16 @@ cp -R examples/cloudfront <yourproject>/terraform
 
 #### Create the terraform configuration
 
+Determine you avaliable AvailabilityZones:
+
 Edit:
 
 ##### vpc/main.tf
 ```hcl
 module "vpc" {
   source           = "github.com/dpetzold/terraform-aws-zappa/vpc"
-  name             = "lambda"
-  aws_key_name     = "lambda"
-  aws_key_location = "${file(./private-key)}"
+  name             = "<project>"
+  aws_key_location = "${file(~/.ssh/<project>)}"
 }
 ```
 
@@ -144,9 +143,12 @@ instances.
 
 #### Create the keypair
 
-https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#KeyPairs:sort=keyName
 
-Download the PEM file to a location accessible to the module.
+```
+aws ec2 create-key-pair --key-name <project> --output text --query KeyMaterial > <project>
+chmod 400 <project>
+mv <project> ~/.ssh
+```
 
 #### Run terrafrom
 
@@ -166,12 +168,12 @@ Edit your ssh configuration file to provide access to the EC2 instances:
 Host bastion
   Hostname <bastion-public-ip>
   User ubuntu
-  IdentityFile <pathtopemfile>
+  IdentityFile ~/.ssh/<project>
 
 Host nat1
   Hostname <nat-private-ip>
   User ubuntu
-  IdentityFile <pathtopemfile>
+  IdentityFile ~/.ssh/<project>
   ProxyJump bastion
 ```
 
