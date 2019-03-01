@@ -13,3 +13,8 @@ module "vpc" {
   redis_at_rest_encryption_enabled = "${var.redis_at_rest_encryption_enabled}"
   redis_transit_encryption_enabled = "${var.redis_transit_encryption_enabled}"
 }
+
+provider "aws" {
+  version = "1.60.0"
+}
+  
