@@ -90,7 +90,7 @@ variable "database_multi_az" {
   default     = "false"
 }
 
-variable "allow_major_version_upgrade" {
+variable "database_allow_major_version_upgrade" {
   description = "Allow major version upgrades"
   default     = "false"
 }
