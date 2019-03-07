@@ -61,6 +61,8 @@ module "db" {
   maintenance_window     = "Mon:03:00-Mon:06:00"
   backup_window          = "00:00-03:00"
 
+  allow_major_version_upgrade = "${var.database_allow_major_version_upgrade}"
+
   # disable backups to create DB faster
   # must be enabled to support read replicas
   backup_retention_period = "${var.database_backup_retention_period}"
