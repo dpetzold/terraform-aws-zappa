@@ -1,4 +1,4 @@
 output "region" {
   description = "Region we created the resources in."
-  value       = "${var.region}"
+  value       = "${var.aws_region}"
 }
