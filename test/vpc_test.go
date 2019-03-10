@@ -2,6 +2,7 @@ package test
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/aws"
@@ -18,7 +19,7 @@ func TestTerraformVpc(t *testing.T) {
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../examples/test-fixture",
 		Vars: map[string]interface{}{
-			"project_name": fmt.Sprintf("terratest-%s", random.UniqueId()),
+			"project_name": fmt.Sprintf("t-%s", strings.ToLower(random.UniqueId())),
 			"aws_region":   awsRegion,
 		},
 	}

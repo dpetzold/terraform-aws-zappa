@@ -2,16 +2,6 @@ variable "name" {
   description = "VPC name"
 }
 
-variable "cidr" {
-  description = "cidr"
-  default     = "10.10.0.0/16"
-}
-
-variable "azs" {
-  type    = "list"
-  default = ["us-east-1a", "us-east-1b", "us-east-1c"]
-}
-
 variable "aws_key_name" {
   description = "AWS key name"
 }
@@ -19,6 +9,11 @@ variable "aws_key_name" {
 variable "aws_key_location" {
   description = "AWS key location"
   default     = ""
+}
+
+variable "cidr" {
+  description = "cidr"
+  default     = "10.10.0.0/16"
 }
 
 // Bastion
