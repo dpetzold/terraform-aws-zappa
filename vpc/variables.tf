@@ -90,6 +90,11 @@ variable "database_multi_az" {
   default     = "false"
 }
 
+variable "database_allow_major_version_upgrade" {
+  description = "Allow major version upgrades"
+  default     = "false"
+}
+
 // ElastiCache
 
 variable "redis_engine_version" {
